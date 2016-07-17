@@ -2,28 +2,28 @@
 <html>
 <head>
 	<meta charset ="utf-8">
-	<title>Friends Pylot Index Page</title>
-	<meta name="description" content="Friends home page using Pylot">
-	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<title>Friends Pylot SHOW Index Page</title>
+	<meta name="description" content="Friends show page using Pylot">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
 	<script type="text/javascript" src="/static/js/script.js"></script>
 	<script type="text/javascript" src="static/js/jquery.min.js"></script>
 </head>
 <body>
 	<div id="wrapper">
-		<h1>These are all my friends!</h1>
+		<h1>Your friend info!</h1>
 		<div class="box">
-			{% for friend in all_friends %}
+			{% for friend in friends %}
 				<p>ID: {{ friend['id'] }}</p>
 				<p>First Name: {{ friend['first_name'] }}</p>
 				<p>Last Name: {{ friend['last_name'] }}</p>
 				<p>Occupation: {{ friend['occupation'] }}</p>
-				<a href="/show/{{friend['id']}}">Show</a>
-				<a href="/edit/{{friend['id']}}">Edit</a>
-				<a href="/delete/{{friend['id']}}">Delete</a>
-				<hr>
+				<!-- <a href="/friends/{{friend['id']}}/show"></a>
+				<a href="/friends/{{friend['id']}}/edit">Edit</a>
+				<a href="/friends/{{friend['id']}}/delete">Delete</a>
+				<hr> -->
 			{% endfor %}
-			<a href="/add">Add a homie</a>
+			<a href="/">Go back</a>
 		</div>
 	</div>
 </body>

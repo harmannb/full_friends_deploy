@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset ="utf-8">
+	<title>Friends Pylot ADD Index Page</title>
+	<meta name="description" content="Friends add page using Pylot">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
+	<script type="text/javascript" src="/static/js/script.js"></script>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Add a friend!</h1>
+		<div class="box">
+			<form action="/add_friend" method='POST'>
+				<label for="first_name">
+					First Name: <input type="text" id="first_name" name="first_name" value="">
+				</label>
+				<label for="last_name">
+					Last Name: <input type="text" id="last_name" name="last_name" value="">
+				</label>
+				<label for="occupation">
+					Occupation: <input type="text" id="occupation" name="occupation" value="">
+				</label>
+				<input type="submit" value="Add" name="submit">
+			</form>
+			<a href="/">Go back</a>
+		</div>
+	</div>
+</body>
+</html>

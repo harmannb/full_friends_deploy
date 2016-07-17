@@ -35,6 +35,43 @@ class WelcomeModel(Model):
     def grab_messages(self):
         query = "SELECT * from messages where users_id = :user_id"
         data = {'user_id':1}
-        return self.db.query_db(query, data)
+        return self.db.c(query, data)
 
     """
+    def get_friend(self, id):
+        query = "SELECT * from friends where id = :id"
+        data = {'id': id}
+        return self.db.query_db(query, data)
+
+    def get_friends(self):
+        query = "SELECT * FROM friends ORDER BY id DESC"
+        return self.db.query_db(query)
+
+    def del_friend(self,id):
+        print id
+        query = "DELETE FROM friends WHERE id = :id"
+        data = {'id': id}
+        self.db.query_db(query,data)
+        return True
+
+    def update_friend(self,data):
+        query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
+        # data = {
+        #     'first_name': request.args.get('first_name'),
+        #     'last_name': request.args.get('last_name'),
+        #     'occupation': request.args.get('occupation'),
+        #     'id': id
+        # }
+        self.db.query_db(query,data)
+        return True
+
+    def add_new_friend(self, data):
+        query = "INSERT INTO friends(first_name, last_name, occupation, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, NOW(), NOW())"
+        
+        self.db.query_db(query,data)
+        return True
+
+
+
+
+

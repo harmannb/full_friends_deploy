@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset ="utf-8">
+	<title>Friends Pylot DELETE Index Page</title>
+	<meta name="description" content="Friends delete page using Pylot">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
+	<script type="text/javascript" src="/static/js/script.js"></script>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Are you sure you want to delete your friend!</h1>
+		<div class="box">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<span class="error">{{message}}</span>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<form action="/delete_friend/{{friend_id}}" method='POST'>
+				<input type="submit" value="Delete my friend" name="delete">
+				<!-- <input type="submit" value="No" name="leave"> -->
+			</form>
+			<!-- <a href="/delete_friend/{{friend_id}}">Delete my friend</a> -->
+			<a href="/">Go back</a>
+		</div>
+	</div>
+</body>
+</html>
