@@ -26,12 +26,12 @@ class DevelopmentDBConfig(DBConfig):
 class StagingDBConfig(DBConfig):
     DB_USERNAME = 'root'
     DB_PASSWORD = 'root'
-    DB_DATABASE_NAME = 'mydb'
+    DB_DATABASE_NAME = 'friendsdb'
     DB_HOST = 'localhost'
 
 """ Put Production Specific Configurations here """
 class ProductionDBConfig(DBConfig):
     DB_USERNAME = 'root'
     DB_PASSWORD = 'root'
-    DB_DATABASE_NAME = 'mydb'
+    DB_DATABASE_NAME = 'friendsdb'
     DB_HOST = 'localhost'
