@@ -56,12 +56,7 @@ class WelcomeModel(Model):
 
     def update_friend(self,data):
         query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
-        # data = {
-        #     'first_name': request.args.get('first_name'),
-        #     'last_name': request.args.get('last_name'),
-        #     'occupation': request.args.get('occupation'),
-        #     'id': id
-        # }
+    
         self.db.query_db(query,data)
         return True
 

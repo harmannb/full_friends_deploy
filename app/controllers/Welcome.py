@@ -50,7 +50,7 @@ class Welcome(Controller):
             return redirect('/')
         else:
             flash('Unexpected error while deleting')
-            return redirect('/delete/id')
+            return redirect('/delete/'+str(id))
         
 
     def add(self):
@@ -92,4 +92,4 @@ class Welcome(Controller):
             return redirect('/')
         else:
             flash('Unexpected error while updating')
-            return redirect('/edit/id')
+            return redirect('/edit/'+str(id))
